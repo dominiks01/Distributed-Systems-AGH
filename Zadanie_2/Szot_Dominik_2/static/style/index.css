@@ -1,0 +1,10 @@
+li > * {
+    width: 125px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+button {
+    width: 250;
+    display: block;
+}

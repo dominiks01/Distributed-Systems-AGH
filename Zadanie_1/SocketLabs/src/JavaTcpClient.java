@@ -1,7 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
+import javax.swing.*;
+import java.io.*;
 import java.net.*;
 
 public class JavaTcpClient {
@@ -11,19 +9,26 @@ public class JavaTcpClient {
     private static DatagramSocket udpSocket;
     private static MulticastSocket multicastSocket;
 
-    public static void initializeClient() throws IOException{
-        tcpSocket = new Socket(CommonConfig.host, CommonConfig.port);
-        udpSocket = new DatagramSocket();
-        multicastSocket = new MulticastSocket(CommonConfig.multicastPort);
-    }
+    public static final String RED = "\033[0;31m";     // RED
+    public static final String RESET = "\033[0m";  // Text Reset
 
     @SuppressWarnings("InfiniteLoopStatement")
     public static void main(String[] args) throws IOException {
 
-        initializeClient();
-
         System.out.print("Please, enter your username: ");
         username = inputReader.readLine();
+
+        if(username == null)
+            System.exit(2);
+
+        try {
+            tcpSocket = new Socket(CommonConfig.host, CommonConfig.port);
+            udpSocket = new DatagramSocket();
+            multicastSocket = new MulticastSocket(CommonConfig.multicastPort);
+        } catch (ConnectException e){
+            System.out.println("Client could not connect to server! Check your configuration");
+            System.exit(2);
+        }
 
         InetAddress address = InetAddress.getByName(CommonConfig.host);
         InetAddress multicastAddress = InetAddress.getByName(CommonConfig.multicastAddress);
@@ -44,8 +49,9 @@ public class JavaTcpClient {
                 udpIncomingMessagesHandler.interrupt();
                 multicastMessagesHandler.interrupt();
 
-                if(username != null)
-                    out.writeObject(newMessage);
+                out.writeObject(newMessage);
+                udpSocket.send(new DatagramPacket(newMessage.getBytes(), newMessage.getBytes().length, address, CommonConfig.port));
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -64,6 +70,7 @@ public class JavaTcpClient {
 
             while (true) {
                 Message newMessage = new Message(MessageType.MESSAGE, inputReader.readLine(), username);
+
 
                 switch (newMessage.message) {
                     case "U": {
@@ -113,7 +120,7 @@ public class JavaTcpClient {
                 }
             }
         } catch (Exception e) {
-            System.out.print("JavaTcpClient ended with error!");
+            System.out.print(RED + "Disconnecting client from chat due to interruption!" + RESET);
             System.exit(2);
         } finally {
             if(!tcpSocket.isClosed())

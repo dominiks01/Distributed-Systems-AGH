@@ -1,9 +1,11 @@
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.io.ObjectInputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.SocketException;
 
 public class UdpInputCommunicationHandler extends Thread{
 
@@ -26,6 +28,7 @@ public class UdpInputCommunicationHandler extends Thread{
             Message messageClass = (Message) iStream.readObject();
             iStream.close();
 
+            System.out.println(messageClass.username + ": sent message");
             System.out.println(messageClass.message);
             System.out.print(">: ");
         }
@@ -36,8 +39,10 @@ public class UdpInputCommunicationHandler extends Thread{
         try {
             this.incomingMessagesHandler();
 
-        } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (SocketException | ClassNotFoundException e) {
+            System.out.println("Socket critical exception");
+        } catch (IOException e){
+            System.out.println("Unknown exception");
         }
     }
 }

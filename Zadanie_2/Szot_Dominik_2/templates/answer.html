@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block more_css%}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style/answer.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+{% endblock %}
+
+{% block content %}
+<div id="left_column">
+
+    <table border="1" class="table_01">
+        <tr>
+            <th>nazwa</th>
+            <th>chronologia</th>
+            <th>funkcja</th>
+            <th>wojewodztwo</th>
+            <th>powiat</th>
+            <th>gmina</th>
+            <th>miejscowosc</th>
+            <th>ulica</th>
+            <th>nrAdresowy</th>
+        </tr>
+        {% for item in rejestr %}
+        <tr>
+            <td>{{ item.nazwa }}</td>
+            <td>{{ item.chronologia }}</td>
+            <td>{{ item.funkcja }}</td>
+            <td>{{ item.wojewodztwo }}</td>
+            <td>{{ item.powiat }}</td>
+            <td>{{ item.gmina }}</td>
+            <td>{{ item.miejscowosc }}</td>
+            <td>{{ item.ulica }}</td>
+            <td>{{ item.nrAdresowy }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    
+    <h1>
+        <h1>Ewidencja zabytków nieruchomych </h1>
+    </h1>
+
+    <table border="1" class="table_01">
+        <tr>
+            <th>nazwa</th>
+            <th>chronologia</th>
+            <th>funkcja</th>
+            <th>wojewodztwo</th>
+            <th>powiat</th>
+            <th>gmina</th>
+            <th>miejscowosc</th>
+            <th>ulica</th>
+            <th>nrAdresowy</th>
+        </tr>
+        {% for item in ewidencja %}
+        <tr>
+            <td>{{ item.nazwa }}</td>
+            <td>{{ item.chronologia }}</td>
+            <td>{{ item.funkcja }}</td>
+            <td>{{ item.wojewodztwo }}</td>
+            <td>{{ item.powiat }}</td>
+            <td>{{ item.gmina }}</td>
+            <td>{{ item.miejscowosc }}</td>
+            <td>{{ item.ulica }}</td>
+            <td>{{ item.nrAdresowy }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+  
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<div id="right_column">
+
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([ parseFloat('{{ lat }}'), parseFloat('{{ lng }}')], 13);
+      
+        // Add the OpenStreetMap tiles as the base layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        '{% for item in pins_for_map %}'
+            var marker = L.marker([parseFloat('{{ item.lat }}'), parseFloat('{{ item.lng }}')]).addTo(map);
+
+            marker.bindPopup(
+                '<b>' + '{{ item.nazwa }}' + '</b>' + '<br>' +
+                '<b>' + 'Adres' + '</b>' + '{{ item.nrAdresowy }} {{ item.ulica }} {{ item.miejscowosc }}, {{ item.gmina }}, {{ item.powiat }}, {{ item.wojewodztwo }} ' + '<br>' + 
+                '<b>' + '{{ item.funkcja }}' + '</b>' + '<br>' + 
+                '<b>' + '{{ item.chronologia }}' + '</b>' + '<br>'
+            ).openPopup();
+
+        '{% endfor %}'
+
+      </script>
+
+    <div id="stats" >
+        <h2> Wyświetlam dane dla: </h2>
+        <p><b> Województwo: {{ stats["names"]["voivodeship"] }} </b> </p>
+       
+        <p><b> 
+            {% if stats["names"]["county"] != None %}  
+                Powiat: {{ stats["names"]["county"] }} 
+            {% else %}
+                Powiat: Wszystkie powiaty
+            {% endif %}
+        </b></p>
+        
+        <p><b> 
+            {% if stats["names"]["community"] != None %}  
+                Gmina: {{ stats["names"]["community"] }} 
+            {% else %}
+                Gmina: Wszystkie gminy
+            {% endif %}
+        </b></p>
+        
+        <p><b> 
+            {% if stats["names"]["town"] != None %}  
+                Miejscowość: {{ stats["names"]["town"] }} 
+            {% else %}
+                Miejscowość: Wszystkie miejscowości
+            {% endif %}
+        </b></p>
+        <br>
+
+        <p><b> Liczba znalezionych wpisów w rejestrze: {{ stats['no_elements_register'] }} </b> </p>
+        <p><b> Liczba znalezionych wpisów w ewidencji: {{ stats['no_elements_ewidence'] }} </b> </p>
+    </div>
+
+</div> 
+
+{% endblock %}
