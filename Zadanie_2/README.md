@@ -8,4 +8,6 @@ Serwis pozwala na:
 * Znajdowanie obiektów spełniających określoną funkcję
 * Opakowanie rekordów w szczegółowe informacje takie jak geolokalizacja, pozwalające na znalezienie obieków w terenie
 
+Jako zabezpieczenie dodano Klucz API
+
 [Pełne polecenie](https://github.com/dominiks01/Distributed-Systems-AGH/blob/main/Zadanie_2/task)
