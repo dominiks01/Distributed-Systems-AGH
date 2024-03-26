@@ -8,4 +8,4 @@ Język programowania JAVA.
 
 Kanały TCP/UDP/Multicast
 
-Dokładnie polecenie: (Zadanie1)[https://github.com/dominiks01/Distributed-Systems-AGH/blob/main/Zadanie_1/task]
+Dokładnie polecenie: https://github.com/dominiks01/Distributed-Systems-AGH/blob/main/Zadanie_1/task
