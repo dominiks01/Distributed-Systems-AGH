@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="194a96ef-d584-41c3-ad4e-909b4628f5ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/.idea/SmartHomeClient.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/config/config.client" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/SmartHome/SmartHome.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/SmartHome/SmartHome.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/enums/DetectorInterfaceEnums.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/enums/LightControlInterfaceEnums.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/enums/MoveDetectorEnum.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/enums/OutdoorLightInterfaceEnums.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/enums/SmartInterfaceEnums.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/enums/SmokeDetectorEnum.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/CommandHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/DetectorsHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/LightControlHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/MoveDetectorsHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/OutdoorLightsHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/SmartDeviceHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/remote/SmokeDetectorsHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeClient/src/utils/utils.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/slice/SmartHome.ice" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/slice/SmartHome.ice" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/MoveDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/MoveDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/MoveDetectorPrx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/MoveDetectorPrx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/SmokeDetectorPrx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/SmokeDetectorPrx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/_MoveDetectorPrxI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/_MoveDetectorPrxI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/_SmokeDetectorPrxI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Detectors/_SmokeDetectorPrxI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Enums/Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Enums/Mode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/Detector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/Detector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/DetectorPrx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/DetectorPrx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/LightControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/LightControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/LightControlPrx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/LightControlPrx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/SmartDevicePrx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/SmartDevicePrx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/_DetectorPrxI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/_DetectorPrxI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/_LightControlPrxI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/_LightControlPrxI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/_SmartDevicePrxI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/SmartHome/Interfaces/_SmartDevicePrxI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/GeneralLights.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/GeneralLights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/MoveSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/MoveSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/OutdoorLights.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/OutdoorLights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/SmokeSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/devices/SmokeSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/server/SmartHomeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/server/SmartHomeServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-1/SmartHomeServer/src/main/java/org/example/server/SmartServantLocator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/.idea/A-2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/protobuf/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/protoc-gen-grpc-java-1.62.2-linux-aarch_64.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/protoc-gen-grpc-java-1.62.2-linux-x86_64.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A-2/test.proto" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dominiks01&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dominiks01/Distributed-Systems-AGH.git&quot;,
+    &quot;accountId&quot;: &quot;5cae1af1-2b19-48c4-a85d-d3e7e360f530&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="279TkJxzcJPtVgMYgwbCk21K9MR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.IceClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IceServer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dominiq/Desktop/Distributed-Systems-AGH/Zadanie_4/DynamicCalls/Server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.IceServer">
+    <configuration name="IceClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sr.ice.client.IceClient" />
+      <module name="Ice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sr.ice.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IceServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sr.ice.server.IceServer" />
+      <module name="Ice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sr.ice.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.IceServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="194a96ef-d584-41c3-ad4e-909b4628f5ef" name="Changes" comment="" />
+      <created>1648731450501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648731450501</updated>
+      <workItem from="1714933473536" duration="2474000" />
+      <workItem from="1714936089678" duration="3597000" />
+      <workItem from="1714940478845" duration="2125000" />
+      <workItem from="1714942624656" duration="2200000" />
+      <workItem from="1714944833256" duration="26000" />
+      <workItem from="1714944878297" duration="180000" />
+      <workItem from="1714945172414" duration="12000" />
+      <workItem from="1714945272121" duration="21000" />
+      <workItem from="1714945320575" duration="15000" />
+      <workItem from="1714945379483" duration="5000" />
+      <workItem from="1714945433173" duration="18000" />
+      <workItem from="1714949674654" duration="32000" />
+      <workItem from="1715063849275" duration="34000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="com.intellij.configurationType" implementationName="Application" />
+  </component>
+</project>
