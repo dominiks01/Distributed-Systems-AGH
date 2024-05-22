@@ -1,3 +1,5 @@
+# Markdown
+
 Napisać aplikację typu chat (5 pkt.)
 – Klienci łączą się serwerem przez protokół TCP
 – Serwer przyjmuje wiadomości od każdego klienta i rozsyła je do pozostałych (wraz zid/nickiem klienta)
