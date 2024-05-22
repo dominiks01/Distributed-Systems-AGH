@@ -1,4 +1,4 @@
-# Markdown
+# Gniazda TCP/UDP
 
 Napisać aplikację typu chat (5 pkt.)
 – Klienci łączą się serwerem przez protokół TCP
@@ -17,3 +17,20 @@ Zaimplementować powyższy punkt w wersji multicast (2 pkt.)
 
 • Zadanie można oddać w dowolnym języku programowania
 • Nie wolno korzystać z frameworków do komunikacji sieciowej – tylko gniazda! Nie wolno też korzystać z Akk
+
+## Rozwiązanie 
+
+```
+# Compile the Project:
+mvn compile
+```
+
+```
+# Run the Server::
+mvn exec:java -P run-server
+```
+
+```
+# Run the Client:
+mvn exec:java -P run-client
+```
