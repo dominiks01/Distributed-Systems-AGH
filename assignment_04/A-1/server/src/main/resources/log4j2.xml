@@ -1,0 +1,12 @@
+<Configuration status="debug" name="debug_log" packages="">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+</Configuration>

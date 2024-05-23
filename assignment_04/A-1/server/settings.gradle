@@ -1,0 +1,4 @@
+rootProject.name = 'SmartHomeServer'
+include 'SmartHome:SmartHome'
+findProject(':SmartHome:SmartHome')?.name = 'SmartHome'
+
