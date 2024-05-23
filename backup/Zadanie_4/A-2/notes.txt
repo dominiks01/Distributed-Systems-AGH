@@ -1,0 +1,1 @@
+protoc -I. --java_out=gen --plugin=protoc-gen-grpc-java-1.62.2-linux-x86_64 --grpc-java_out=gen test.proto

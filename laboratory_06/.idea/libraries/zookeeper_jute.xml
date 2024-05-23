@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="zookeeper-jute">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/apache-zookeeper-3.8.4-bin/docs/apidocs/zookeeper-jute/member-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/apache-zookeeper-3.8.4-bin/docs/apidocs/zookeeper-jute/package-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/apache-zookeeper-3.8.4-bin/docs/apidocs/zookeeper-jute/type-search-index.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

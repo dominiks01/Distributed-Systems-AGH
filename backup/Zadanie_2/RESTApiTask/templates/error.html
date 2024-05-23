@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block more_css %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style/answer.css') }}">
+</head>
+{% endblock %}
+
+{% block title %}
+    <p> ERROR {{ code }} </p>
+{% endblock %}
+
+{% block content %}
+    <p style="color: red;"> {{ data }} </p>
+{% endblock %}
