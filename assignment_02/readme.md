@@ -5,10 +5,12 @@ Użyte serwisy:
 * https://dane.gov.pl/en/dataset/1130,rejestr-zabytkow-nieruchomych/resource/35929/table
 * https://opencagedata.com/d.
 
-Zadaniem serwisu jest pobranie zabytków z ewidencji dla danych parametrów zapytania, obróbka danych polegająca 
-na dodaniu dodatkowych informacji takich jak geolokalizacja, którą następnie można zobaczyć po stronie klienta.
+Zadaniem serwisu jest pobranie zabytków z ewidencji dla danych parametrów zapytania, takich jak miejscowość, powiat.
+Obróbka danych polegająca na dodaniu dodatkowych informacji takich jak geolokalizacja, 
+którą następnie można zobaczyć po stronie klienta w postaci prostej mapy.
 
 <img src="images/demo.png">
+
 
 # Użycie
 

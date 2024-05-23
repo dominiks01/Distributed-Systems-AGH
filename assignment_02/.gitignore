@@ -161,3 +161,4 @@ cython_debug/
 #.idea/
 
 __pycache__
+/l2-rest-4.pdf
