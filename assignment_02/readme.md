@@ -11,6 +11,7 @@ którą następnie można zobaczyć po stronie klienta w postaci prostej mapy.
 
 <img src="images/demo.png">
 
+Zapytania można wykonywać za pomocą prostego formularza. 
 
 # Użycie
 
