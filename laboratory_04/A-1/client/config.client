@@ -1,5 +1,0 @@
-SmokeDetector.Proxy=SmokeDetector/SmokeDetector:tcp -h 127.0.0.2 -p 12342 : udp -h 127.0.0.2 -p 12342
-MoveDetector.Proxy=MoveDetector/MoveDetector:tcp -h 127.0.0.2 -p 12342 : udp -h 127.0.0.2 -p 12342
-GeneralLights.Proxy=GeneralLights/GeneralLights:tcp -h 127.0.0.2 -p 12342 : udp -h 127.0.0.2 -p 12342
-OutdoorLights.Proxy=OutdoorLights/OutdoorLights:tcp -h 127.0.0.2 -p 12342 : udp -h 127.0.0.2 -p 12342
-SmokeDetector getLocation
