@@ -1,4 +1,0 @@
-﻿SmokeDetector1.Proxy=SmokeDetector/SmokeDetector1:tcp -h 127.0.0.11 -p 10011 : udp -h 127.0.0.11 -p 10011
-MoveDetector1.Proxy=MoveDetector/MoveDetector1:tcp -h 127.0.0.11 -p 10011 : udp -h 127.0.0.11 -p 10011
-OutdoorLights1.Proxy=OutdoorLights/OutdoorLights1:tcp -h 127.0.0.11 -p 10011 : udp -h 127.0.0.11 -p 10011
-GeneralLights.Proxy=GeneralLights/GeneralLights1:tcp -h 127.0.0.11 -p 10011 : udp -h 127.0.0.11 -p 10011
