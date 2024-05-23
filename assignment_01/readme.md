@@ -1,36 +1,30 @@
 # Gniazda TCP/UDP
+Projekt realizujący chat wielu użytkowników z pomocą serwera. 
 
-Napisać aplikację typu chat (5 pkt.)
-– Klienci łączą się serwerem przez protokół TCP
-– Serwer przyjmuje wiadomości od każdego klienta i rozsyła je do pozostałych (wraz zid/nickiem klienta)
-– Serwer jest wielowątkowy – każde połączenie od klienta powinno mieć swój wątek
-– Proszę zwrócić uwagę na poprawną obsługę wątków
+# Cechy projektu
 
-Dodać dodatkowy kanał UDP (3 pkt.)
-– Serwer oraz każdy klient otwierają dodatkowy kanał UDP (ten sam numer portu jak przy TCP)
-– Po wpisaniu komendy ‘U’ u klienta przesyłana jest wiadomość przez UDP na serwer, który rozsyła ją do pozostałych klientów
-– Wiadomość symuluje dane multimedialne (można np. wysłać ASCII Art)
+* Clienci łączą się serwerem przez protokół TCP 
+* Serwer oraz każdy klient posiadają dodatkowy kanał UDP oraz w wersji multicast
+* Po wpisaniu komendy ‘U’ u klienta przesyłana jest wiadomość przez UDP na serwer, który rozsyła ją do pozostałych klientów
+* Serwer przyjmuje wiadomości od każdego klienta i rozsyła je do pozostałych (wraz zid/nickiem klienta)
+* Serwer jest wielowątkowy
 
-Zaimplementować powyższy punkt w wersji multicast (2 pkt.)
-– Nie zamiast, tylko jako alternatywna opcja do wyboru (komenda ‘M’)
-– Multicast przesyła bezpośrednio do wszystkich przez adres grupowy (serwer może, ale nie musi odbierać)
+# Użyte technologie
+* Java, Maven
 
-• Zadanie można oddać w dowolnym języku programowania
-• Nie wolno korzystać z frameworków do komunikacji sieciowej – tylko gniazda! Nie wolno też korzystać z Akk
+## Uruchomienie projektu
 
-## Rozwiązanie 
-
-```
-# Compile the Project:
+```bash
+# Compile the Project
 mvn compile
 ```
 
-```
-# Run the Server::
+```bash
+# Run the Server
 mvn exec:java -P run-server
 ```
 
-```
-# Run the Client:
+```bash
+# Run the Client
 mvn exec:java -P run-client
 ```
