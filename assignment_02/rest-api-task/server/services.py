@@ -35,91 +35,76 @@ api_key = config["Geocode-Api"]
 geo_api = f"https://api.opencagedata.com/geocode/v1/json"
 
 
-def process_data(data):
+def process_data(data: dict) -> dict:
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
     jobs = []
 
     for id, item in enumerate(data):
-        if item["nrAdresowy"]:
+        if item["nrAdresowy"] != "":
             item["geolocation"] = "true"
-            p = multiprocessing.Process(
-                target=process_item, args=(id, item, return_dict)
-            )
+            p = multiprocessing.Process(target=worker, args=(id, item, return_dict))
             jobs.append(p)
             p.start()
         else:
-            item.update(
-                {
-                    "geolocation": "false",
-                    "lat": "",
-                    "lng": "",
-                    "formatted": "",
-                    "annotations": "",
-                    "components": "",
-                    "bounds": "",
-                }
-            )
+            item["geolocation"] = "false"
+            item["lat"] = ""
+            item["lng"] = ""
+            item["formatted"] = ""
+            item["annotations"] = ""
+            item["components"] = ""
+            item["bounds"] = ""
 
     for proc in jobs:
         proc.join()
 
-    list_with_pins = list(return_dict.values())
+    list_with_pins = return_dict.values()
     pins_for_map = [x for x in data if x["geolocation"] == "false"]
 
     return list_with_pins + pins_for_map
 
 
-def process_item(procnum, item, return_dict):
+def worker(procnum: int, item: dict, return_dict: dict) -> None:
     try:
-        if item["nrAdresowy"]:
-            params = {
-                "q": f"{item['nrAdresowy']} {item['ulica']} {item['miejscowosc']} {item['gmina']}",
-                "key": api_key,
-            }
+        params = {
+            "q": f"""{item['nrAdresowy']}%20{item["ulica"]}%20{item["miejscowosc"]}%20{item["gmina"]}""",
+            "key": api_key,
+        }
 
-            response = requests.get(geo_api, params=params)
+        response = requests.get(geo_api, params=params)
 
-            if response.status_code == 200:
-                response = response.json()["results"]
+        if response.status_code == 200:
+            response = response.json()["results"]
 
-                lat = response[0]["geometry"]["lat"]
-                lng = response[0]["geometry"]["lng"]
+            lat = response[0]["geometry"]["lat"]
+            lng = response[0]["geometry"]["lng"]
 
-                response[0]["geometry"].pop("lat")
-                response[0]["geometry"].pop("lng")
+            response[0]["geometry"].pop("lat")
+            response[0]["geometry"].pop("lng")
 
-                item.update(
-                    {
-                        "lat": str(lat),
-                        "lng": str(lng),
-                        "formatted": response[0]["formatted"],
-                        "annotations": response[0]["annotations"],
-                        "components": response[0]["components"],
-                        "bounds": response[0]["bounds"],
-                    }
-                )
+            item["lat"] = str(lat)
+            item["lng"] = str(lng)
+            item["formatted"] = response[0]["formatted"]
+            response[0].pop("formatted")
 
-            else:
-                logging.error(response)
-                item.update(
-                    {
-                        "lat": "",
-                        "lng": "",
-                        "formatted": "",
-                        "annotations": "",
-                        "components": "",
-                        "bounds": "",
-                    }
-                )
+            item.update(response[0])
 
-            return_dict[procnum] = item
+        else:
+            logging.error(response)
+            item["lat"] = ""
+            item["lng"] = ""
+            item["formatted"] = ""
+            item["annotations"] = ""
+            item["components"] = ""
+            item["bounds"] = ""
+
+        return_dict[procnum] = item
 
     except requests.exceptions.RequestException as e:
         logging.error(e)
         raise HTTPException(
-            status_code=501,
-            detail="Server encountered a critical error while querying services!",
+            status_code=HTTP_501_NOT_IMPLEMENTED,
+            detail="Serwer natrafił na krytyczny błąd przy odpytywaniu serwisów!",
         )
 
 
@@ -164,9 +149,9 @@ def filter_data(
     df = pd.json_normalize(data)
 
     filters = {
-        "miejscowosc": (town, TerritorialUnit.town),
-        "gmina": (community, TerritorialUnit.community),
-        "powiat": (county, TerritorialUnit.county),
+        "miejscowosc": (town.capitalize(), TerritorialUnit.town),
+        "gmina": (community.lower(), TerritorialUnit.community),
+        "powiat": (county.lower(), TerritorialUnit.county),
         "wojewodztwo": (voivodeship, TerritorialUnit.voivodeship),
     }
 
@@ -189,31 +174,31 @@ def validate_data(value: Optional[str], unit_type: TerritorialUnit):
     Returns:
         bool: true if valid, false otherwise
     """
+
     if value is None or value == "None" or value == "":
         return False
 
-    voivodeships = copy.copy(valid_voivodeships)
-
     match unit_type:
         case TerritorialUnit.voivodeship:
-            if value in voivodeships:
+            if value in valid_voivodeships:
                 return True
 
         case TerritorialUnit.county:
             return method_line_by_line(
                 "./database/wykaz_jednosetk_terytorialnych.csv",
-                value,
+                value.lower(),
                 TerrytorialUnitIndex.COUNTY,
             )
 
         case TerritorialUnit.community:
             return method_line_by_line(
                 "./database/wykaz_jednosetk_terytorialnych.csv",
-                value,
+                value.lower(),
                 TerrytorialUnitIndex.COMMUNITY,
             )
 
         case TerritorialUnit.town:
+            value = value.capitalize()
             return method_line_by_line(
                 "./database/wykaz_miejscowosci.csv", value, TerrytorialUnitIndex.TOWN
             )

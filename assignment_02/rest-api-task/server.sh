@@ -13,7 +13,7 @@ trap cleanup INT
 
 # Run the server
 echo "Starting server..."
-./venv/bin/python -m uvicorn server.server:app &
+./myenv/bin/python -m uvicorn server.server:app &
 
 sleep 2
 

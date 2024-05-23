@@ -2,4 +2,4 @@
 
 # Run the client
 echo "Starting client..."
-./venv/bin/python -m uvicorn client.client:app --port 12345
+./myenv/bin/python -m uvicorn client.client:app --port 12345
