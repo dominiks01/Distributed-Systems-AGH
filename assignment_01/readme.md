@@ -15,6 +15,11 @@ Projekt realizujący chat wielu użytkowników z pomocą serwera.
 ## Uruchomienie projektu
 
 ```bash
+# move to main directory
+cd assignment_01/socket-labs
+```
+
+```bash
 # Compile the Project
 mvn compile
 ```
