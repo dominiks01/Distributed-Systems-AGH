@@ -8,7 +8,7 @@ Użyte serwisy:
 Zadaniem serwisu jest pobranie zabytków z ewidencji dla danych parametrów zapytania, obróbka danych polegająca 
 na dodaniu dodatkowych informacji takich jak geolokalizacja, którą następnie można zobaczyć po stronie klienta.
 
-<img src="./rest-api-task/images/demo.png">
+<img src="images/demo.png">
 
 # Użycie
 
