@@ -44,13 +44,12 @@ public class Technician extends OrthMedUser {
                 LOGGER.info("Technician '{}' is waiting for service requests on '{}'", name, serviceRequestQueueName);
             }
 
-            String adminQueueName = ADMIN_QUEUE + name; // Unique queue name for each doctor
+            String adminQueueName = ADMIN_QUEUE + name;
             channel.queueDeclare(adminQueueName, false, false, true, null);
             channel.exchangeDeclare(RabbitMQConfig.ADMIN_EXCHANGE, "fanout", true);
             channel.queueBind(adminQueueName, RabbitMQConfig.ADMIN_EXCHANGE, ""); // Bind queue without routing key
             channel.basicConsume(adminQueueName, false, createAdminConsumer());
             channel.basicQos(1);
-
 
         } catch (IOException e) {
             LOGGER.error("Failed to connect, details: {}", e.getMessage());
@@ -113,10 +112,8 @@ public class Technician extends OrthMedUser {
 
         LOGGER.info("Processed request '{}', sending results to the doctor {}", message, doctorName);
         channel.basicPublish(RabbitMQConfig.SERVICE_RESPONSE_EXCHANGE, doctorName, null, result.getBytes());
-        channel.basicPublish(RabbitMQConfig.SERVICE_RESPONSE_EXCHANGE, "admin" , null, result.getBytes());
+        channel.basicPublish(RabbitMQConfig.SERVICE_RESPONSE_EXCHANGE, "admin", null, result.getBytes());
         LOGGER.info("Completed service request id: '{}'", serviceId);
-
-
 
         // Acknowledge the message
         channel.basicAck(envelope.getDeliveryTag(), false);

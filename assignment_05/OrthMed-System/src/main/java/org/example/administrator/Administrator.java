@@ -30,6 +30,8 @@ public class Administrator extends OrthMedUser {
 
             // Declare new exchange of fanout type.
             channel.exchangeDeclare(RabbitMQConfig.ADMIN_EXCHANGE, "fanout", true);
+            channel.exchangeDeclare(RabbitMQConfig.SERVICE_RESPONSE_EXCHANGE, "direct", true);
+            channel.exchangeDeclare(RabbitMQConfig.SERVICE_REQUEST_EXCHANGE, "direct", true);
 
             // Bind to all services
             for (Service service : Service.values()) {
@@ -37,17 +39,31 @@ public class Administrator extends OrthMedUser {
 
                 // Bind to service requests.
                 String serviceRequestQueueName = RabbitMQConfig.SERVICE_REQUEST_QUEUE + serviceName;
-                channel.queueDeclare(serviceRequestQueueName, true, false, false, null);
-                channel.queueBind(serviceRequestQueueName, RabbitMQConfig.SERVICE_REQUEST_EXCHANGE, serviceName);
-                channel.basicConsume(serviceRequestQueueName, false, createConsumer());
-
-
+                try {
+                    channel.queueDeclare(serviceRequestQueueName, true, false, false, null);
+                    channel.queueBind(serviceRequestQueueName, RabbitMQConfig.SERVICE_REQUEST_EXCHANGE, serviceName);
+                    channel.basicConsume(serviceRequestQueueName, false, createConsumer());
+                } catch (IOException e) {
+                    LOGGER.error("Failed to declare or bind queue '{}', exception: {}", serviceRequestQueueName, e.getMessage());
+                    for (Throwable t = e; t != null; t = t.getCause()) {
+                        LOGGER.error("Caused by: {}", t.toString());
+                    }
+                    return;
+                }
             }
 
             String serviceResponseQueueName = RabbitMQConfig.SERVICE_RESPONSE_QUEUE + "admin";
-            channel.queueDeclare(serviceResponseQueueName, true, false, false, null);
-            channel.queueBind(serviceResponseQueueName, RabbitMQConfig.SERVICE_RESPONSE_EXCHANGE, "admin");
-            channel.basicConsume(serviceResponseQueueName, false, createConsumer());
+            try {
+                channel.queueDeclare(serviceResponseQueueName, true, false, false, null);
+                channel.queueBind(serviceResponseQueueName, RabbitMQConfig.SERVICE_RESPONSE_EXCHANGE, "admin");
+                channel.basicConsume(serviceResponseQueueName, false, createConsumer());
+            } catch (IOException e) {
+                LOGGER.error("Failed to declare or bind response queue '{}', exception: {}", serviceResponseQueueName, e.getMessage());
+                for (Throwable t = e; t != null; t = t.getCause()) {
+                    LOGGER.error("Caused by: {}", t.toString());
+                }
+                return; // Exit the method if an error occurs while setting up the queue
+            }
 
             LOGGER.info("Administrator '{}' initialized successfully.", name);
         } catch (IOException e) {
