@@ -1,53 +1,58 @@
-# Ewidencja zabytków
+# Heritage Registration System
 
-Serwis webowy realizujący funkcjonalności w oparciu o otwarte serwisy udostępniające REST API.
-Użyte serwisy:
-* https://dane.gov.pl/en/dataset/1130,rejestr-zabytkow-nieruchomych/resource/35929/table
-* https://opencagedata.com/d.
+A web service that implements functionalities based on open services providing REST APIs. The used services include:
 
-Zadaniem serwisu jest pobranie zabytków z ewidencji dla danych parametrów zapytania, takich jak miejscowość, powiat.
-Obróbka danych polegająca na dodaniu dodatkowych informacji takich jak geolokalizacja, 
-którą następnie można zobaczyć po stronie klienta w postaci prostej mapy.
+- [National Heritage Register Dataset](https://dane.gov.pl/en/dataset/1130,rejestr-zabytkow-nieruchomych/resource/35929/table)
+- [OpenCage Geocoding API](https://opencagedata.com/d)
+
+## Overview
+
+The purpose of the service is to retrieve heritage sites from the registry based on query parameters such as locality and district. The data will be processed to include additional information such as geolocation, which can then be displayed on the client side in the form of a simple map.
 
 <img src="images/demo.png">
 
-Zapytania można wykonywać za pomocą prostego formularza. 
+## Querying
 
-# Użycie
+Queries can be executed through a simple form.
 
-Przejdź do głównego folderu
+## Usage
+
+1. Navigate to the main folder:
 ```shell
 cd rest-api-task
 ```
 
-Utwórz środowisko pythona
+2. Create a Python virtual environment:
 ```shell
 python -m venv myenv
 source myenv/bin/activate
 ```
 
-Pobierz wymagane biblioteki
+3. Activate the virtual environment:
+```shell
+source myenv/bin/activate
+```
+
+4. Install the required libraries:
 ``` shell
 pip install -r requirements.txt
 ```
 
-# API klucze
-Do poprawnego działania programu potrzeby nam będzie klucz 
-do geolokalizacji. Projekt używa https://opencagedata.com/d.
-Wystarczy podmienić klucz w pliku `.env`
+# API Keys
+To ensure the proper functioning of the program, you will need a key for geolocation. The project uses the OpenCage Geocoding API. Simply replace the placeholder key in the `.env` file
 
 ```
 Geocode-Api="YOUR KEY"
 My-API=95a5843d98fdef6b1ea4e63b61b02b14
 ```
 
-# Uruchomienie 
-Aby uruchomić serwer wystarczy wykonać skrypt
+# Running the Application 
+To start the server, simply execute the script:
 ```shell
 ./server.sh
 ```
 
-Podobnie uruchamiamy klienta
+Similarly, to start the client, run:
 ```shell
 ./client.sh
 ```
